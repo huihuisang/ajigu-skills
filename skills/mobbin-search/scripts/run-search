@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -eu
+
+skill_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+search_script="$skill_dir/scripts/search_screens.py"
+python_bin="${MOBBIN_PYTHON_BIN:-/usr/bin/python3}"
+
+if [ ! -x "$python_bin" ]; then
+  echo "Python is required at $python_bin. Override MOBBIN_PYTHON_BIN if needed." >&2
+  exit 2
+fi
+
+case "${MOBBIN_API_KEY:-}" in
+  "")
+    env_file="${MOBBIN_ENV_FILE:-$skill_dir/mobbin.env}"
+    if [ ! -f "$env_file" ]; then
+      echo "Mobbin credentials are not configured." >&2
+      echo "Copy $skill_dir/mobbin.env.example to $skill_dir/mobbin.env and replace the 1Password secret reference." >&2
+      exit 2
+    fi
+    if ! command -v op >/dev/null 2>&1; then
+      echo "1Password CLI is required. Install it, then enable desktop app integration." >&2
+      exit 2
+    fi
+    exec op run --env-file="$env_file" -- "$python_bin" "$search_script" "$@"
+    ;;
+  op://*)
+    if ! command -v op >/dev/null 2>&1; then
+      echo "1Password CLI is required to resolve MOBBIN_API_KEY." >&2
+      exit 2
+    fi
+    exec op run -- "$python_bin" "$search_script" "$@"
+    ;;
+  *)
+    exec "$python_bin" "$search_script" "$@"
+    ;;
+esac

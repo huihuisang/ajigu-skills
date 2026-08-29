@@ -1,0 +1,4 @@
+interface:
+  display_name: "Smooth Alpha Edges"
+  short_description: "Rebuild jagged transparent PNG silhouettes cleanly"
+  default_prompt: "Use $smooth-alpha-edges to repair this transparent PNG outline without redrawing its interior."

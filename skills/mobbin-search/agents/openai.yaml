@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobbin Search"
+  short_description: "Search and inspect real Mobbin UI references"
+  default_prompt: "Use $mobbin-search to find and analyze relevant product UI references."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Xcode Cloud Setup"
+  short_description: "Audit and configure reusable Xcode Cloud workflows"
+  default_prompt: "Use $xcode-cloud-setup to audit and configure this project’s Xcode Cloud workflow."

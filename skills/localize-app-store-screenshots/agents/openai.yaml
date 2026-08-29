@@ -1,0 +1,4 @@
+interface:
+  display_name: "Localize App Store Screenshots"
+  short_description: "Localize screenshot copy without changing product imagery"
+  default_prompt: "Use $localize-app-store-screenshots to localize existing App Store screenshots and prepare a reviewed ASC upload."

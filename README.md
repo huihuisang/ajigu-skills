@@ -34,6 +34,12 @@ npx skills add huihuisang/ajigu-skills -g --all
 
 You can also clone the repository and copy or symlink an individual directory under `skills/` into your agent's global skills directory.
 
+Install the screenshot-localization Python dependencies when that skill is needed:
+
+```bash
+python3 -m pip install -r skills/localize-app-store-screenshots/requirements.txt
+```
+
 ## Mobbin configuration
 
 Never commit a real Mobbin API key or a personal 1Password item reference. Copy the example locally and point it at your own 1Password item:

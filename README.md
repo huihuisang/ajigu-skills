@@ -9,7 +9,7 @@ A portable collection of reusable agent skills for App Store operations, UI rese
 | `localize-app-store-screenshots` | Localize text in existing App Store screenshots while preserving product imagery. | Python 3, Pillow, NumPy, OpenCV; `asc`, `asc-shots-pipeline`, and `asc-cli-usage` for upload workflows |
 | `mobbin-search` | Search Mobbin for real product screenshots and download results for visual analysis. | Python 3, a Mobbin API key; 1Password CLI for the recommended secret workflow |
 | `smooth-alpha-edges` | Repair jagged transparent-image silhouettes while preserving interior pixels. | Bash, ImageMagick |
-| `stock-value-analysis` | Produce source-backed long-term equity, financial-quality, and valuation analysis. | Internet access and market-data sources |
+| `stock-value-analysis` | Analyze long-term equity value with structured history, recent filings, and anomaly-driven research. | Internet access and market-data sources |
 | `xcode-cloud-setup` | Audit, configure, and diagnose Xcode Cloud workflows. | `asc`, `jq`, App Store Connect authentication |
 
 ## Install

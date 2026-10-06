@@ -1,6 +1,6 @@
 # Ajigu Skills
 
-A portable collection of reusable agent skills for app icon design, App Store operations, UI research, image cleanup, equity analysis, and Xcode Cloud.
+A collection of reusable agent skills for app artwork, App Store operations, macOS development and distribution, project decisions, task outputs, disk cleanup, UI research, and equity analysis.
 
 ## Skills
 
@@ -12,6 +12,11 @@ A portable collection of reusable agent skills for app icon design, App Store op
 | `smooth-alpha-edges` | Repair jagged transparent-image silhouettes while preserving interior pixels. | Bash, ImageMagick |
 | `stock-value-analysis` | Analyze long-term equity value with structured history, recent filings, and anomaly-driven research. | Internet access and market-data sources |
 | `xcode-cloud-setup` | Audit, configure, and diagnose Xcode Cloud workflows. | `asc`, `jq`, App Store Connect authentication |
+| [`write-ai-doc`](skills/write-ai-doc/README.md) | Record project decisions, acceptance criteria, and verified implementation results in docs-ai. | Agent file access; Simplified Chinese by default |
+| [`task-artifacts`](skills/task-artifacts/README.md) | Track task outputs and gate cleanup on verification, publication, and idle checks. | Python 3.10+, Git, lsof; macOS tested; optional agent integration |
+| [`macos-direct-distribution`](skills/macos-direct-distribution/README.md) | Prepare Developer ID signing, notarization, stapling, and DMG release evidence. | macOS, Xcode tools; authorized Apple signing and notarization access |
+| [`macos-finder-extension`](skills/macos-finder-extension/README.md) | Build and diagnose Finder Sync extensions, signing, permissions, and registration. | macOS system tools; Xcode for builds |
+| [`disk-cleanup`](skills/disk-cleanup/README.md) | Inspect development storage and clean only authorized, verified candidates. | macOS terminal; relevant development tools when installed |
 
 ## Install
 
@@ -43,6 +48,12 @@ Install the screenshot-localization Python dependencies when that skill is neede
 python3 -m pip install -r skills/localize-app-store-screenshots/requirements.txt
 ```
 
+## Task output command
+
+After installing `task-artifacts`, run its `scripts/install.py` with Python 3.10+ to install the launcher and optional agent discovery links. The installer refuses unrelated existing commands and skills; it does not grant deletion permission or modify global instructions. See the [task-artifacts README](skills/task-artifacts/README.md) for migration, dependencies, and tests.
+
+Installing any skill does not authorize deletion, signing changes, or publication. Use the authorization already given for the current task and ask before expanding its scope.
+
 ## Mobbin configuration
 
 Never commit a real Mobbin API key or a personal 1Password item reference. Copy the example locally and point it at your own 1Password item:
@@ -58,10 +69,15 @@ The repository ignores `mobbin.env`, downloaded `.mobbin/` results, Python bytec
 ```text
 skills/
 ├── app-icon-studio/
+├── disk-cleanup/
 ├── localize-app-store-screenshots/
+├── macos-direct-distribution/
+├── macos-finder-extension/
 ├── mobbin-search/
 ├── smooth-alpha-edges/
 ├── stock-value-analysis/
+├── task-artifacts/
+├── write-ai-doc/
 └── xcode-cloud-setup/
 ```
 

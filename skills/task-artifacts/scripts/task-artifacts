@@ -1,0 +1,13 @@
+#!/bin/sh
+# task-artifacts portable launcher
+set -eu
+
+task_skill_dir="${TASK_ARTIFACT_SKILL_DIR:-$HOME/.agents/skills/task-artifacts}"
+case "$task_skill_dir" in
+    /*) ;;
+    *)
+        printf '%s\n' 'Refused: TASK_ARTIFACT_SKILL_DIR must be absolute. Set it with $HOME.' >&2
+        exit 1
+        ;;
+esac
+exec python3 "$task_skill_dir/scripts/task_artifacts.py" "$@"

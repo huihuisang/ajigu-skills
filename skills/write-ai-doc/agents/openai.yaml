@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目规格与决策记录"
+  short_description: "在 docs-ai 中讨论中文规格、保存设计决策并记录实施验证结果"
+  default_prompt: "使用 $write-ai-doc 编写或更新项目的中文规格，记录已确认决策和验证证据。"

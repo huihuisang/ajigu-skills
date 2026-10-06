@@ -1,0 +1,3 @@
+interface:
+  display_name: "Task Artifacts"
+  short_description: "Track task outputs and clean them after verified publication"

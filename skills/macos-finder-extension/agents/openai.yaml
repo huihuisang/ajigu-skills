@@ -1,0 +1,4 @@
+interface:
+  display_name: "macOS Finder Extension"
+  short_description: "Build and debug Finder Sync extensions"
+  default_prompt: "Use $macos-finder-extension to implement or diagnose a macOS Finder Sync extension."

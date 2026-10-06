@@ -1,0 +1,4 @@
+interface:
+  display_name: "macOS Direct Distribution"
+  short_description: "Build, sign, notarize, and verify direct macOS releases"
+  default_prompt: "Use $macos-direct-distribution to prepare and verify a signed, notarized macOS release artifact."

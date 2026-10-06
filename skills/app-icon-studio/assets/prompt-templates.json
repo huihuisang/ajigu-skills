@@ -1,0 +1,14 @@
+{
+  "artwork": {
+    "opening": "Create a square app icon artwork at 1024 x 1024 pixels. Fill the entire canvas edge to edge with an opaque background and four sharp 90-degree corners. Use a straight-on view. No rounded corners, squircle mask, outer margins, frame, visible slab thickness, or external drop shadow. Extend the background fully to all four edges. Keep the main subject centered and clear of the edges.",
+    "subject_prefix": "The square artwork itself IS",
+    "default_style": "Charming toylike quality. Use subtle highlights and internal shading to give the subject depth.",
+    "closing": "Crisp clean edges, clear silhouette. No text, no letters, no watermark. Output only the artwork, with no mockup or presentation background."
+  },
+  "foreground": {
+    "opening": "Create one isolated app icon foreground on a 1024 x 1024 canvas with a transparent background. Keep the subject centered with space around it. Use a straight-on view. Keep the same subject size and position as the reference when supplied. Do not add a background tile, rounded app mask, frame, checkerboard pattern, external shadow, or full-canvas fill.",
+    "subject_prefix": "The foreground subject IS",
+    "default_style": "Use flat, opaque subject shapes with clean edges. Do not bake glass, bevels, specular highlights, or cast shadows into the subject; leave material effects for Icon Composer.",
+    "closing": "Clear silhouette and clean transparent edges. No text, no letters, no watermark. Output only this foreground layer."
+  }
+}

@@ -1,0 +1,8 @@
+[
+  {"request": "给我的 macOS 番茄钟 App 画个图标，用直角正方形。", "expected": "artwork"},
+  {"request": "根据这张图优化 iOS app icon 的提示词，先别出图。", "expected": "prompt_only"},
+  {"request": "把选定的 App 图标拆成透明前景，方便进 Icon Composer。", "expected": "foreground"},
+  {"request": "给天气 App 设计 16 个功能小图标。", "expected": "do_not_trigger"},
+  {"request": "把导航栏返回按钮换成 SF Symbol。", "expected": "do_not_trigger"},
+  {"request": "上传 App Store 截图并提交审核。", "expected": "do_not_trigger"}
+]

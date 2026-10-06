@@ -1,11 +1,12 @@
 # Ajigu Skills
 
-A portable collection of reusable agent skills for App Store operations, UI research, image cleanup, equity analysis, and Xcode Cloud.
+A portable collection of reusable agent skills for app icon design, App Store operations, UI research, image cleanup, equity analysis, and Xcode Cloud.
 
 ## Skills
 
 | Skill | Purpose | Optional dependencies |
 | --- | --- | --- |
+| `app-icon-studio` | Generate square app icon artwork, reusable prompts, and optional transparent foreground assets for Icon Composer. | Host image generation; Python 3.10+ for prompts; Pillow for image checks |
 | `localize-app-store-screenshots` | Localize text in existing App Store screenshots while preserving product imagery. | Python 3, Pillow, NumPy, OpenCV; `asc`, `asc-shots-pipeline`, and `asc-cli-usage` for upload workflows |
 | `mobbin-search` | Search Mobbin for real product screenshots and download results for visual analysis. | Python 3, a Mobbin API key; 1Password CLI for the recommended secret workflow |
 | `smooth-alpha-edges` | Repair jagged transparent-image silhouettes while preserving interior pixels. | Bash, ImageMagick |
@@ -13,6 +14,8 @@ A portable collection of reusable agent skills for App Store operations, UI rese
 | `xcode-cloud-setup` | Audit, configure, and diagnose Xcode Cloud workflows. | `asc`, `jq`, App Store Connect authentication |
 
 ## Install
+
+Ask your agent: "Install the app-icon-studio skill from https://github.com/huihuisang/ajigu-skills."
 
 Install interactively with the Skills CLI:
 
@@ -54,6 +57,7 @@ The repository ignores `mobbin.env`, downloaded `.mobbin/` results, Python bytec
 
 ```text
 skills/
+├── app-icon-studio/
 ├── localize-app-store-screenshots/
 ├── mobbin-search/
 ├── smooth-alpha-edges/

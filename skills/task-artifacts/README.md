@@ -10,7 +10,9 @@ Ask your Agent: "Install task-artifacts from https://github.com/huihuisang/ajigu
 npx skills add huihuisang/ajigu-skills -g -y --skill task-artifacts
 ```
 
-Command installation needs Node.js and network access; the runtime does not. The package includes optional Codex and Claude Code discovery integration. Run the installer from the installed skill directory:
+Command installation needs Node.js and network access; the runtime does not. For a plugin-only installation, run `python3 scripts/install_plugin_tools.py` from the installed Ajigu Skills plugin root. This optional initializer creates a stable plugin-root link and the command without copying skills or creating standalone discovery entries. Rerun it from the new plugin root after each upgrade. It preserves existing standalone skills; retire them separately after comparing changes and repairing old instruction paths.
+
+For a standalone installation, the package includes optional Codex and Claude Code discovery integration. Run the following installer from the installed skill directory:
 
 ```bash
 python3 scripts/install.py

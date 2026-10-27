@@ -96,7 +96,17 @@ Plugin installation registers workflows; it does not install Xcode, Python packa
 
 ## Task output command
 
-The plugin can invoke the bundled `skills/task-artifacts/scripts/task_artifacts.py` directly with Python 3.10+. The global launcher is optional. After explicitly choosing to initialize `task-artifacts`, run its `scripts/install.py` with Python 3.10+ to install the launcher and optional agent discovery links. The installer refuses unrelated existing commands and skills; it does not grant deletion permission or modify global instructions. See the [task-artifacts README](skills/task-artifacts/README.md) for migration, dependencies, and tests.
+The plugin can invoke its bundled `skills/task-artifacts/scripts/task_artifacts.py` directly with Python 3.10+. To keep the global `task-artifacts` command without another skill copy, run this explicit initializer from the installed plugin root:
+
+```bash
+python3 scripts/install_plugin_tools.py
+```
+
+Use the `installedPath` returned by `codex plugin add ... --json`, or the `installPath` shown by `claude plugin list --json`, to find that root. The initializer creates a relative link at `~/.local/share/ajigu-skills/current` and a launcher in `~/.local/bin`. It creates no entries in any skill scanning directory and preserves unrelated commands, links, and existing standalone skills. After upgrading the plugin, rerun the initializer from the new installed root to refresh the link; this step is explicit and no hook runs it automatically.
+
+Global instructions that need a stable file path can read `~/.local/share/ajigu-skills/current/skills/<skill-name>/SKILL.md`. Existing instructions are not rewritten by the initializer. Review their old paths before retiring standalone copies. An explicit absolute `TASK_ARTIFACT_SKILL_DIR` still overrides the launcher's default.
+
+For a standalone Skills CLI installation, the original `skills/task-artifacts/scripts/install.py` remains available and intentionally creates shared skill discovery links. Choose that workflow only when retaining a standalone installation. See the [task-artifacts README](skills/task-artifacts/README.md) for runtime dependencies and task-state migration limits.
 
 Installing any skill does not authorize deletion, signing changes, or publication. Use the authorization already given for the current task and ask before expanding its scope.
 
@@ -140,6 +150,7 @@ Requires Python 3.10+ for the checks, Codex CLI and Claude Code for plugin insta
 ```bash
 python3 scripts/validate_plugins.py
 python3 scripts/test_plugin_distribution.py
+python3 scripts/test_plugin_tools.py
 python3 scripts/verify_plugin_installation.py --output-dir /absolute/new-test-output
 ```
 

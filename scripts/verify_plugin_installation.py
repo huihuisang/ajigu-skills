@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 
 from validate_plugins import validate
 from codex_skill_inventory import inventory
@@ -69,6 +70,16 @@ def verify(output, source):
         if (home / '.local/bin/task-artifacts').exists():
             raise ValueError('Plugin installation must not initialize task-artifacts.')
 
+    def initialize_tools(label, path, home, env):
+        run(label + '-tools-init', [sys.executable, str(path / 'scripts/install_plugin_tools.py')], env)
+        alias = home / '.local/share/ajigu-skills/current'
+        if alias.resolve() != path.resolve():
+            raise ValueError('The stable tool link does not point to the selected plugin.')
+        run(label + '-tool-help', [str(home / '.local/bin/task-artifacts'), '--help'], env)
+        for directory in ('.agents/skills', '.codex/skills', '.claude/skills'):
+            if (home / directory / 'task-artifacts').exists():
+                raise ValueError('Plugin tool setup created a duplicate standalone skill.')
+
     codex_home, codex_env = environment('codex-profile')
     run('codex-marketplace-add', ['codex', 'plugin', 'marketplace', 'add', source, '--json'], codex_env)
     install = json.loads(run('codex-plugin-add', ['codex', 'plugin', 'add',
@@ -91,6 +102,7 @@ def verify(output, source):
     if not local_source:
         run('codex-marketplace-upgrade', ['codex', 'plugin', 'marketplace', 'upgrade', 'ajigu-skills'], codex_env)
     run('codex-plugin-reinstall', ['codex', 'plugin', 'add', 'ajigu-skills@ajigu-skills', '--json'], codex_env)
+    initialize_tools('codex', Path(install['installedPath']), codex_home, codex_env)
 
     claude_home, claude_env = environment('claude-profile')
     run('claude-marketplace-add', ['claude', 'plugin', 'marketplace', 'add', source], claude_env)
@@ -108,6 +120,7 @@ def verify(output, source):
     if not local_source:
         run('claude-marketplace-update', ['claude', 'plugin', 'marketplace', 'update', 'ajigu-skills'], claude_env)
         run('claude-plugin-update', ['claude', 'plugin', 'update', 'ajigu-skills@ajigu-skills'], claude_env)
+    initialize_tools('claude', Path(installed['installPath']), claude_home, claude_env)
 
     single_home, single_env = environment('standalone-profile')
     run('standalone-skill-install', ['npx', '--yes', 'skills', 'add', str(REPO),

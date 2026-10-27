@@ -23,6 +23,8 @@ du -xhd 1 "$HOME/Documents" 2>/dev/null | sort -hr | head -20
 
 按环境检查常见占用：
 
+具体开发工具位置与 DerivedData 归属读取方法见[只读定位参考](references/developer-locations.md)。仅在主目录调查需要进一步定位时读取。
+
 | 位置 | 调查重点 | 清理边界 |
 | --- | --- | --- |
 | Xcode DerivedData | 项目归属、运行中的 App、构建与索引任务 | 只清理已确认闲置且可重建的具体目录 |

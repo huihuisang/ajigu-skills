@@ -11,7 +11,9 @@ Use the global `task-artifacts` command, or invoke [scripts/task_artifacts.py](s
 
 ## Installation and migration
 
-Keep the single shared copy under `~/.agents/skills/task-artifacts`. Run its installer to create the command in the current user's `~/.local/bin` and relative discovery links for both Codex and Claude Code:
+For a plugin-only installation, follow the [plugin tool setup](https://github.com/huihuisang/ajigu-skills#task-output-command) in the installed plugin README. It keeps the skill in the plugin cache and creates a stable link outside skill scanning directories. Rerun this explicit setup from the new plugin root after an upgrade; it does not remove standalone skills or rewrite global rules.
+
+For a standalone installation, keep the shared copy under `~/.agents/skills/task-artifacts`. Run its installer to create the command in the current user's `~/.local/bin` and relative discovery links for both Codex and Claude Code:
 
 ```bash
 python3 "$HOME/.agents/skills/task-artifacts/scripts/install.py"
@@ -21,7 +23,7 @@ The installer connects `${CODEX_HOME:-$HOME/.codex}/skills/task-artifacts` and `
 
 When run from a standalone distribution folder, it copies the package instead of moving it.
 
-The launcher resolves `${TASK_ARTIFACT_SKILL_DIR:-$HOME/.agents/skills/task-artifacts}` on every invocation. It does not need Codex or Claude files to run. Set `TASK_ARTIFACT_SKILL_DIR` consistently to an absolute path when using a different shared location; use `$HOME` when assigning it rather than a quoted literal `~`. Relative values are rejected by both the installer and launcher.
+The standalone launcher defaults to `$HOME/.agents/skills/task-artifacts`; the plugin launcher defaults to `$HOME/.local/share/ajigu-skills/current/skills/task-artifacts`. Both honor an explicit absolute `TASK_ARTIFACT_SKILL_DIR` on every invocation. It does not need Codex or Claude files to run. Set `TASK_ARTIFACT_SKILL_DIR` consistently to an absolute path when using a different shared location; use `$HOME` when assigning it rather than a quoted literal `~`. Relative values are rejected by both the installer and launcher.
 
 Agent configuration overrides affect discovery links only; symbolic links at agent configuration roots are supported. Add `~/.local/bin` to `PATH` if it is not already present. The installer does not edit shell configuration, global rule files, permissions, or hooks, and does not replace unrelated commands. `--bin-dir` can select another command directory already in `PATH`.
 

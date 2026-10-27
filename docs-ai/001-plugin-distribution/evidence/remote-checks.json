@@ -1,0 +1,144 @@
+{
+  "source": "huihuisang/ajigu-skills",
+  "verified_source_commit": "c4b571e053fd7114fb04c605ba9d6b84d942c1ba",
+  "platform": "macOS arm64",
+  "versions": {
+    "codex": "codex-cli 0.164.0",
+    "claude": "2.1.310 (Claude Code)"
+  },
+  "plugin": {
+    "name": "ajigu-skills",
+    "version": "0.1.0",
+    "skills": [
+      "app-icon-studio",
+      "disk-cleanup",
+      "localize-app-store-screenshots",
+      "macos-direct-distribution",
+      "macos-finder-extension",
+      "mobbin-search",
+      "smooth-alpha-edges",
+      "stock-value-analysis",
+      "task-artifacts",
+      "write-ai-doc",
+      "xcode-cloud-setup"
+    ]
+  },
+  "checks": [
+    {
+      "check": "codex-marketplace-add",
+      "exit_code": 0
+    },
+    {
+      "check": "codex-plugin-add",
+      "exit_code": 0
+    },
+    {
+      "check": "codex-plugin-list",
+      "exit_code": 0
+    },
+    {
+      "check": "codex-runtime-inventory",
+      "exit_code": 0
+    },
+    {
+      "check": "codex-marketplace-upgrade",
+      "exit_code": 0
+    },
+    {
+      "check": "codex-plugin-reinstall",
+      "exit_code": 0
+    },
+    {
+      "check": "claude-marketplace-add",
+      "exit_code": 0
+    },
+    {
+      "check": "claude-plugin-install",
+      "exit_code": 0
+    },
+    {
+      "check": "claude-plugin-details",
+      "exit_code": 0
+    },
+    {
+      "check": "claude-marketplace-update",
+      "exit_code": 0
+    },
+    {
+      "check": "claude-plugin-update",
+      "exit_code": 0
+    },
+    {
+      "check": "standalone-skill-install",
+      "exit_code": 0
+    }
+  ],
+  "skill_file_count": 61,
+  "skill_sha256": {
+    "skills/app-icon-studio/README.md": "7114bd1fa3e2539cd289430ade7f28769cae304febea59a2e59c93b058515200",
+    "skills/app-icon-studio/SKILL.md": "c2d7020a537643108d36f3024e9720489e44f795aefa6082153ed26550827c57",
+    "skills/app-icon-studio/assets/prompt-templates.json": "f2d452ff30b20c01924aaa8596ede18ae5f9c14cf369b7bbe952e1d15267c87e",
+    "skills/app-icon-studio/references/commands.md": "8d174e373a9f1b4a6cd30f56d68a6dae9815ef458a2439232b6ba19fb50feb83",
+    "skills/app-icon-studio/references/icon-composer.md": "2fbdbe583b66381318ea28b8f2c8b70ab5f357c3c0bd273c2d85be0652d3e28d",
+    "skills/app-icon-studio/scripts/icon_tools.py": "7e9725f8d70bb31bb1991cf779bc3b96ee768ec7681f8c5aa8bb5dfcf648e3db",
+    "skills/app-icon-studio/tests/test_icon_tools.py": "42a1f0c5f83bb4239e331e0ce36b4a4acb0de5a8be6af0d08eb946f3886d3232",
+    "skills/app-icon-studio/tests/trigger-cases.json": "d712ba373bc3128d7bb326cf8e281b7f7c915567fad6414a9c44533bb76eded0",
+    "skills/disk-cleanup/README.md": "6164f0fb00e897867a11102a1c253df0657d0f4e3269369c3c3077f006a5877e",
+    "skills/disk-cleanup/SKILL.md": "342690743a9acc72bacd26ef12dcf54f1f8a740ca140d59dfa71ebde83c436c9",
+    "skills/localize-app-store-screenshots/SKILL.md": "a6d05509c32673fa81f803ea7ccd9d6b58a70e0ade7c31c3d57047e6521a7e24",
+    "skills/localize-app-store-screenshots/agents/openai.yaml": "9db369fa9d3158658a16f853cd71d7a82ad108dd7f0a612a7d89bf29a9429d56",
+    "skills/localize-app-store-screenshots/references/manifest.md": "38208fa0ea063c201017e82c0875ab9e08dc813356784b6893607dfbd7d55051",
+    "skills/localize-app-store-screenshots/requirements.txt": "72371cf05c8d81f31bff4567ef80d9f272c12d88f6be860342a36c6f5aa646eb",
+    "skills/localize-app-store-screenshots/scripts/compose_localized_patch.py": "7f87c94b215234b491ab3b25a987e2af60b2dea2ac65c85040cd6cbafe965ba5",
+    "skills/localize-app-store-screenshots/scripts/prepare_clean_master.py": "d28c45c1299a065ce664dd369aa56302760339622b55ae388e3e092cd8f90589",
+    "skills/localize-app-store-screenshots/scripts/render_localized_text.py": "0aa14bd2848ad55ae1881efd4bd5424ee306854c48933e4b932854781397b83d",
+    "skills/localize-app-store-screenshots/scripts/verify_localized_text.py": "61906411db3b9ad2c111705c421ce33c36e1d8157b3ca3c81542f2002025910f",
+    "skills/macos-direct-distribution/README.md": "78b1d3fe9e33c62a27010d61307458e2e67e4b023bc376a99937c174d3e8202d",
+    "skills/macos-direct-distribution/SKILL.md": "c4d5db2c5bea6f6abc7ca2d55e7c5eed1c4083ed5908797ec7b416317fb9d90a",
+    "skills/macos-direct-distribution/agents/openai.yaml": "cced961283e8f5ed56f332c3c8d6bad7b71a2588a8896bd34e7d5b34484f5ea9",
+    "skills/macos-direct-distribution/references/manual-workflow.md": "633e92874c9815e553303806195c754d718e12aa90a6a600b311313744b0ada1",
+    "skills/macos-direct-distribution/references/verification-troubleshooting.md": "812bc3664c10ce5e116a30b2da42421955ec70ec9bebe910edfca775c07ed70d",
+    "skills/macos-finder-extension/README.md": "c3cb0e3f3d3717562097a459956bb4ec124a32b96881d51434147528dd537681",
+    "skills/macos-finder-extension/SKILL.md": "ffd5665306ecbe6fbf4a0bec86117f36c0a71e2d2dbada26d78c3778bc69142e",
+    "skills/macos-finder-extension/agents/openai.yaml": "d9c010ce30c19c1395e6a08e7abfad0cf8a21a5af03b5a0e113fc24389b43e73",
+    "skills/macos-finder-extension/references/architecture.md": "5593d363059b2bd9d57760655eb6e7aa1569281d45c511017b7aa7bf7986b2b8",
+    "skills/macos-finder-extension/references/icon-actions.md": "ecf8b037f7931535ff0f298ba0c5a7da7565f8857698afed2e4cace473df8c28",
+    "skills/macos-finder-extension/references/sandbox-permissions.md": "7a612ae1ef71b68bba58a6d5c078064923dabf77e0937d7efa26d8510a7dc840",
+    "skills/macos-finder-extension/references/verification.md": "ee43aa526e2688c4294fb585e06fbbf66c3083812eac87c7b1f979cfeb45aa2a",
+    "skills/macos-finder-extension/scripts/inspect_finder_extension.sh": "6065e638229e7e7ec0a960a012918c21a62434a62a2db80caa21346bfb4204fb",
+    "skills/macos-finder-extension/scripts/test_inspection.py": "a39990b4a38fe9d9fdea489a20311436d5e3baf733e380539f0e48b0a92a7153",
+    "skills/mobbin-search/SKILL.md": "8fa67fa6e6121fe7085fabdc4381627971f9a4839e243b2eca46e6f7ad9c1de6",
+    "skills/mobbin-search/agents/openai.yaml": "0b825903cf513bc7ef0315095e136542be299fe4f29b80b9caa9bc6d23b3d9a3",
+    "skills/mobbin-search/mobbin.env.example": "d76a1ede8c48de1a1655f9fa5f23fcff4d09bf7dfd5502aa91a41e4d40b1a330",
+    "skills/mobbin-search/scripts/run-search": "5065f1c2351fa4b19fe6b067c728e747a3695ed687b391d85d78602a44418993",
+    "skills/mobbin-search/scripts/search_screens.py": "cb79f2d34586813c3142c2f00ee88c5cd5638eb501ada9f95fe60954bf89dd61",
+    "skills/smooth-alpha-edges/SKILL.md": "451660017e80968e3df0a402cda7198ed0296dbdffa9516321a1eba81f51f4fc",
+    "skills/smooth-alpha-edges/agents/openai.yaml": "a48f27109a73012e716eab1078bafe845a5a73ac8d13fa0c0d1e595740edbb0f",
+    "skills/smooth-alpha-edges/scripts/rebuild_vector_alpha.sh": "7b8d099482d18293e3f10be89a35e511a50ade7febb57a2bc319e9b9660c0ec6",
+    "skills/stock-value-analysis/SKILL.md": "ea9f18ebed51a5f20eeacbb4fb588b1ebf014b7abc88c34e458c0c93487a8717",
+    "skills/stock-value-analysis/references/financial-diagnostics.md": "69ab8d768e5cbf915cfb5b7fa28a885c70070ce177ae3ad709ce618033023ff8",
+    "skills/stock-value-analysis/references/valuation-and-output.md": "552c9dfc85c810dab6b9673b12c79109a21475cf6de2a535121edf839e771a67",
+    "skills/task-artifacts/README.md": "fc747a663ea600f3cd29dddd6c2708bdd35ef8b720c49fed9f5a9fb203975aa3",
+    "skills/task-artifacts/SKILL.md": "c64d3adbd31cd9501d9c1a176b88af2fa7c44dd67e8b6ba93a640c111ec09bd1",
+    "skills/task-artifacts/agents/openai.yaml": "2914eb1fda25f58407d7dfbf58f2c097685ed872962176d67f96b2325c42e7cc",
+    "skills/task-artifacts/scripts/install.py": "792cc59a01d7ee6a2994499d92419a1396ec18bae7a0743dba705a35e110677c",
+    "skills/task-artifacts/scripts/task-artifacts": "4f9911ae192567ed676828b3d20037dd9d0c112db4aa2ee94012fb3060a995d6",
+    "skills/task-artifacts/scripts/task_artifacts.py": "2ef50d20b4b59780461e31eade80492542d1b9331f5db5e2be2b882be56e7d0b",
+    "skills/task-artifacts/scripts/test_install.py": "7f8d4b5b3309f1df27a21a32317a631f17d538c98133898648145bc00751e84e",
+    "skills/task-artifacts/scripts/test_task_artifacts.py": "22e0c990cdcc20aaaae838ae7e52aa11a794abae9ed3134361148588ccd63395",
+    "skills/write-ai-doc/README.md": "04098efb558b2671e4353ac9b80ee8c142f559b808ebc8d96582a78e19c6ec36",
+    "skills/write-ai-doc/SKILL.md": "2ca7a4ec7321865b3b0e6135b3369b757aad6e2c80ece1798f6408b7f78d85ee",
+    "skills/write-ai-doc/agents/openai.yaml": "4c0b6a0db52cb881264cebf6b0a0a38fae805bd1c60f61d45ee543a2bdd5710c",
+    "skills/write-ai-doc/references/action-template.md": "19759c64a0b54b86d429811ec9f6ebbbcc386d321626f02471414a86c86f34e6",
+    "skills/write-ai-doc/references/plan-template.md": "dff1a8c81b99ceecf554fe6a8e31803d90da2fd27a0325d299a524bc05309814",
+    "skills/xcode-cloud-setup/SKILL.md": "9c091d57d41ca3fbde791cc8938f8e46431eb9133bb0ac022f1fefadb0ce9202",
+    "skills/xcode-cloud-setup/agents/openai.yaml": "d2501d2860b61abfc88c55bb099bf648af479a2f4893bd5646f230efe4f319b2",
+    "skills/xcode-cloud-setup/references/setup.md": "a7dd54eb5f78c1ed1f9f6aacb166fe451dd2d3d8d9f1132aaae524b1321f368b",
+    "skills/xcode-cloud-setup/references/troubleshooting.md": "a5efc022072d7105b11087141ff1f03daad2c353a80df43a6e21083d1cc4ac44",
+    "skills/xcode-cloud-setup/scripts/audit.sh": "462cba89a7e004eb17020200c9e74268213f0dee048735dd256b55227ef57dde"
+  },
+  "marketplace_updates": "Passed.",
+  "remote_files_verified": 76,
+  "scope": "CLI installation and component inventory; no model invocation or desktop UI test.",
+  "result": "Passed: both GitHub marketplace installations, runtime inventories, updates, standalone installation and remote source tree verification."
+}

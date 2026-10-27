@@ -1,12 +1,12 @@
 # 实施结果：双宿主插件整包分发
 
-整体结果：本地实施与验收通过，发布后回读待执行
+整体结果：已完成。功能分发已验证；本记录补充远端交付证据。
 
 实施状态：已完成，范围为清单、安装说明与可重复验证脚本。
 
-验证状态：本地通过；远端安装、更新与提交回读在推送后执行，最终结果记录于交付报告，不提前记为通过。
+验证状态：通过。本地与 GitHub 来源实装、两端更新、单技能安装、远端提交及 76 个文件回读均已实际执行。
 
-审核状态：Standards 独立审核通过，Spec 的 AC-01～05 实现及本地证据通过；完整发布仍以 AC-06 和远端来源复验为门槛。
+审核状态：Standards 独立审核通过，Spec 的 AC-01～05 实现及本地证据通过；AC-06 和远端来源复验已在审核后实际通过，原审核时点的范围和状态保留不改写。
 
 对应方案：[000-plan.md](000-plan.md)。
 
@@ -23,13 +23,13 @@
 | 编号 | 实际检查 | 结果与边界 |
 | --- | --- | --- |
 | AC-01 | 元数据一致性、根目录引用、默认组件边界、8 项回归；Claude 两种清单严格校验 | 通过；无 hook、MCP 或自动初始化 |
-| AC-02 | Codex 添加 marketplace、安装、重新安装及 app-server skills/list；比较全部技能文件 | 本地通过；完整加载 11 项并启用 |
-| AC-03 | Claude 添加 marketplace、安装及 plugin details；比较全部技能文件 | 本地通过；组件清单为 11 项技能，其他组件为 0 |
+| AC-02 | Codex 添加 marketplace、安装、重新安装及 app-server skills/list；比较全部技能文件 | 本地及 GitHub 来源通过；完整加载 11 项并启用 |
+| AC-03 | Claude 添加 marketplace、安装及 plugin details；比较全部技能文件 | 本地及 GitHub 来源通过；组件清单为 11 项技能，其他组件为 0 |
 | AC-04 | Skills CLI 隔离安装 write-ai-doc | 通过；该用户目录只包含这一项 |
-| AC-05 | README 命令与原生 CLI 帮助及本地实装对应 | 通过；Git marketplace 更新命令留待远端复验 |
-| AC-06 | 发布文件摘要、授权推送和远端回读 | 推送后执行；交付时必须核对远端提交与文件 |
+| AC-05 | README 命令与原生 CLI 帮助及本地实装对应 | 通过；GitHub 来源的两端 marketplace 与插件更新命令均已通过 |
+| AC-06 | 发布文件摘要、授权推送和远端回读 | 通过；功能提交 c4b571e053fd7114fb04c605ba9d6b84d942c1ba 已在 GitHub main 回读，76 个文件匹配 |
 
-本地执行摘要、宿主版本与技能文件摘要见 [local-checks.json](evidence/local-checks.json)。完整隔离安装日志归档在本次交付报告旁，不在公开仓库保存本机绝对路径和用户配置。
+本地执行摘要、宿主版本与技能文件摘要见 [local-checks.json](evidence/local-checks.json)；GitHub 来源安装、更新及回读结果见 [remote-checks.json](evidence/remote-checks.json)。本次后续提交只补充本结果账本与远端证据，不改变插件、marketplace、脚本、README 或技能文件；最终提交回读另见交付报告。完整隔离安装日志归档在本次交付报告旁，不在公开仓库保存本机绝对路径和用户配置。
 
 ## 审核范围与版本
 

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ajigu-skills",
+  "version": "0.1.0",
+  "description": "Reusable skills for app artwork, macOS development, project decisions, task outputs, disk cleanup, and research.",
+  "author": {
+    "name": "huihuisang",
+    "url": "https://github.com/huihuisang"
+  },
+  "homepage": "https://github.com/huihuisang/ajigu-skills",
+  "repository": "https://github.com/huihuisang/ajigu-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "macos",
+    "developer-tools",
+    "workflow"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Ajigu Skills",
+        "shortDescription": "App artwork and local developer workflows",
+        "developerName": "huihuisang",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/huihuisang/ajigu-skills"
+      }
+    }
+  }
+}

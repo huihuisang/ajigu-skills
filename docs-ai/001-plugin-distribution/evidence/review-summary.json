@@ -1,0 +1,34 @@
+{
+  "baseline": "9a6048f0687a637cfd8c3f26f7afdcdec4ab7930",
+  "target_revision": "a62d96f7b6fe22f9a67f9f1992705f60d887adee",
+  "reviewed_files_sha256": {
+    "plugin.json": "64cb3475d7ec3b2379286094e541debc94be6eeb77afbc9246af01a7e3fc8b80",
+    ".agents/plugins/marketplace.json": "299380ec05a716eb41eef0a7f148aed989f6a1e0b27e273e30dc1cf997bd658c",
+    ".claude-plugin/plugin.json": "9aaf47a0b45c974db3eca5fe5d5773c467113de78e6bd0122d036e919241e7e7",
+    ".claude-plugin/marketplace.json": "cf7135b3270310f2e5af31c201bac74a6abfa9de03ec58742a36148303d31783",
+    "README.md": "e314b4d1eab12864cb7590c2b6fbfe8ba01367a16d0e327a6823b388d65a0a35",
+    "scripts/validate_plugins.py": "8710def9737a757fc5a17afc88d44e8713946998f504e714c1055d0dc0a658ae",
+    "scripts/test_plugin_distribution.py": "7daa4abf5bc775b1b648ee4d98f0f6aa8f2ca75ee3c88d6b7ee488b6763dff46",
+    "scripts/verify_plugin_installation.py": "8f6760220022769249cfd934b313bc2b5bf923c06c9f86a1054b5488dd7c3ca5",
+    "scripts/codex_skill_inventory.py": "2c1f82032ac17cb8231d32ae35715935a3dde0c357a26adf8c3267d7f0192387",
+    "docs-ai/001-plugin-distribution/000-plan.md": "69b05fa9fb0a055bc86238d1eedf604aee6eafe7d778561df572aebea994d61f"
+  },
+  "standards": {
+    "status": "clean",
+    "findings": 0,
+    "independent": true
+  },
+  "spec": {
+    "status": "incomplete",
+    "implementation_findings": 0,
+    "local_acceptance": "AC-01 through AC-05 passed",
+    "pending": "AC-06 and remote GitHub installation/update checks after push",
+    "independent": true
+  },
+  "scope_exclusions": [
+    "001-action.md",
+    "evidence/local-checks.json",
+    "evidence/review-summary.json"
+  ],
+  "publication_authorized_by": "User explicitly requested implementation, validation and push."
+}

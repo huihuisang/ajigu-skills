@@ -20,6 +20,28 @@ A collection of reusable agent skills for app artwork, App Store operations, mac
 
 ## Install
 
+Choose the complete plugin for one versioned bundle, or install individual skills with the Skills CLI. Both options use the same `skills/` sources. Plugins contain all 11 skills and have no hooks or MCP servers.
+
+### Codex plugin
+
+```bash
+codex plugin marketplace add huihuisang/ajigu-skills
+codex plugin add ajigu-skills@ajigu-skills
+```
+
+The repository marketplace is named `ajigu-skills`. Restart the host or start a new session after installation if it has already loaded its skill inventory. This is a repository-distributed plugin; it is not a listing in the official public plugin directory.
+
+### Claude Code plugin
+
+```bash
+claude plugin marketplace add huihuisang/ajigu-skills
+claude plugin install ajigu-skills@ajigu-skills
+```
+
+The same steps are available as `/plugin marketplace add huihuisang/ajigu-skills` and `/plugin install ajigu-skills@ajigu-skills` inside Claude Code. Start a new session, then invoke a skill such as `/ajigu-skills:write-ai-doc`.
+
+### Individual skills
+
 Ask your agent: "Install the app-icon-studio skill from https://github.com/huihuisang/ajigu-skills."
 
 Install interactively with the Skills CLI:
@@ -48,9 +70,33 @@ Install the screenshot-localization Python dependencies when that skill is neede
 python3 -m pip install -r skills/localize-app-store-screenshots/requirements.txt
 ```
 
+## Updates and existing installations
+
+For the Codex bundle, refresh the marketplace and install its current plugin version:
+
+```bash
+codex plugin marketplace upgrade ajigu-skills
+codex plugin add ajigu-skills@ajigu-skills
+```
+
+For Claude Code:
+
+```bash
+claude plugin marketplace update ajigu-skills
+claude plugin update ajigu-skills@ajigu-skills
+```
+
+Restart or start a new session afterward. Maintainers must increment the plugin version in both manifests when shipping changes to the bundle, including skill changes. The validation script rejects mismatched versions. Individual Skills CLI installations remain separate and follow that installer's update workflow.
+
+If skills are already installed individually, inspect the existing copies and preserve any local changes before switching to the bundle. The plugin does not remove or overwrite independent installations. Choose which installation to keep for each skill to avoid duplicate discovery; remove old copies only after confirming their contents and the replacement. Plugin skill names can have a host-specific namespace.
+
+## Dependencies and initialization
+
+Plugin installation registers workflows; it does not install Xcode, Python packages, command-line tools, signing identities, credentials, or service accounts. Follow the selected skill's prerequisites when needed. Some skills require macOS and local execution. Installing this plugin does not grant deletion, signing, or publication permission.
+
 ## Task output command
 
-After installing `task-artifacts`, run its `scripts/install.py` with Python 3.10+ to install the launcher and optional agent discovery links. The installer refuses unrelated existing commands and skills; it does not grant deletion permission or modify global instructions. See the [task-artifacts README](skills/task-artifacts/README.md) for migration, dependencies, and tests.
+The plugin can invoke the bundled `skills/task-artifacts/scripts/task_artifacts.py` directly with Python 3.10+. The global launcher is optional. After explicitly choosing to initialize `task-artifacts`, run its `scripts/install.py` with Python 3.10+ to install the launcher and optional agent discovery links. The installer refuses unrelated existing commands and skills; it does not grant deletion permission or modify global instructions. See the [task-artifacts README](skills/task-artifacts/README.md) for migration, dependencies, and tests.
 
 Installing any skill does not authorize deletion, signing changes, or publication. Use the authorization already given for the current task and ask before expanding its scope.
 
@@ -67,6 +113,10 @@ The repository ignores `mobbin.env`, downloaded `.mobbin/` results, Python bytec
 ## Repository layout
 
 ```text
+plugin.json
+.agents/plugins/marketplace.json
+.claude-plugin/plugin.json
+.claude-plugin/marketplace.json
 skills/
 ├── app-icon-studio/
 ├── disk-cleanup/
@@ -82,6 +132,20 @@ skills/
 ```
 
 Each directory is self-contained and includes a required `SKILL.md` plus only the scripts, references, assets, or agent metadata that its workflow needs.
+
+## Validation
+
+Requires Python 3.10+ for the checks, Codex CLI and Claude Code for plugin installation tests, and Node.js with npm for the standalone Skills CLI check. Integration checks run on macOS; other platforms are unverified.
+
+```bash
+python3 scripts/validate_plugins.py
+python3 scripts/test_plugin_distribution.py
+python3 scripts/verify_plugin_installation.py --output-dir /absolute/new-test-output
+```
+
+Use a new output directory outside this repository. The integration check creates isolated user profiles there, installs both bundles, compares every skill file, reads Codex's app-server skill inventory and Claude's component inventory, and installs only `write-ai-doc` through the Skills CLI. It leaves logs and profiles for inspection. It does not invoke a model, run the skills, or change the current user's plugin configuration. Network access is needed to resolve the Skills CLI package. Pass `--source huihuisang/ajigu-skills` to verify the published marketplace and its update commands; local-path marketplaces do not have a Git snapshot to upgrade.
+
+The plugin formats follow the [OpenAI packaging guide](https://developers.openai.com/plugins/build/plugins) and [Claude plugin reference](https://code.claude.com/docs/en/plugins-reference).
 
 ## License
 

@@ -1,0 +1,19 @@
+{
+  "name": "ajigu-skills",
+  "version": "0.1.0",
+  "description": "Reusable skills for app artwork, macOS development, project decisions, task outputs, disk cleanup, and research.",
+  "author": {
+    "name": "huihuisang",
+    "url": "https://github.com/huihuisang"
+  },
+  "homepage": "https://github.com/huihuisang/ajigu-skills",
+  "repository": "https://github.com/huihuisang/ajigu-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "macos",
+    "developer-tools",
+    "workflow"
+  ],
+  "skills": "./skills/"
+}

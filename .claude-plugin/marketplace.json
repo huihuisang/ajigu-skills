@@ -1,0 +1,15 @@
+{
+  "name": "ajigu-skills",
+  "owner": {
+    "name": "huihuisang",
+    "url": "https://github.com/huihuisang"
+  },
+  "plugins": [
+    {
+      "name": "ajigu-skills",
+      "source": "./",
+      "description": "Reusable skills for app artwork, macOS development, project decisions, task outputs, disk cleanup, and research."
+    }
+  ],
+  "description": "Install Ajigu Skills as one plugin or keep using individual skills."
+}

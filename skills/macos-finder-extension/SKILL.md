@@ -1,7 +1,7 @@
 ---
 name: macos-finder-extension
 license: MIT
-description: Design, implement, debug, and verify macOS Finder Sync extensions for context menus, badges, toolbar actions, monitored directories, and host-app communication. Use when implementing Finder integration or diagnosing failures involving missing menus, sandbox access, localization, signing, registration, or stale builds; do not use as a File Provider sync-engine guide.
+description: Design, implement, debug, and verify macOS Finder Sync extensions for context menus, badges, toolbar actions, monitored directories, and host-app communication. Use when implementing Finder integration or diagnosing missing menus, incorrect icon colors, sandbox access, localization, signing, registration, or stale builds; do not use as a File Provider sync-engine guide.
 ---
 
 # macOS Finder Extension
@@ -17,7 +17,7 @@ Do not change signing, entitlements, sandbox status, bundle identifiers, App Gro
 1. Inspect the existing project and distribution model before adding targets or capabilities.
 2. Define Finder-facing features, monitored-directory scope, app communication, state ownership, and file-authorization needs separately.
 3. Implement the smallest extension surface that satisfies the request.
-4. Localize extension UI in the extension target and use Finder-compatible template artwork.
+4. Localize extension UI in the extension target. For menu icons, read [menu-icons.md](references/menu-icons.md), choose template or intentional full-color rendering, and check the actual colors in Finder.
 5. Build the exact signed candidate, install one canonical copy, register it once, restart Finder, and test the real UI.
 
 Read the focused references when relevant:
@@ -25,6 +25,7 @@ Read the focused references when relevant:
 - Always read [architecture.md](references/architecture.md) when implementing or restructuring a Finder Sync extension.
 - Read [sandbox-permissions.md](references/sandbox-permissions.md) when the workflow reads or writes files outside an existing authorized root, or when macOS prompts unexpectedly.
 - Read [verification.md](references/verification.md) before installing, diagnosing registration, or handing off a build.
+- Read [menu-icons.md](references/menu-icons.md) whenever adding or changing menu icons or diagnosing their color. A runtime symbol with `isTemplate = true` is not sufficient evidence.
 - Read [icon-actions.md](references/icon-actions.md) only for custom-icon/reset-icon work or when its failure patterns match the current bug.
 
 Use the bundled inspection script after building or installing:
@@ -40,4 +41,4 @@ The bundle identifier is optional. The script inspects the extension point, sign
 
 ## Completion Standard
 
-A successful build is not enough. Verify the requested menus, badges, or toolbar behavior in Finder; verify host communication against the installed app; exercise every requested location or file class; and prove that signed permissions and extension registrations match the intended architecture.
+A successful build is not enough. Verify the requested menus, badges, or toolbar behavior in Finder; verify host communication against the installed app; exercise every requested location or file class; and prove that signed permissions and extension registrations match the intended architecture. Menu icons require observed normal and highlighted states in both Light and Dark appearances; report any untested state as incomplete.

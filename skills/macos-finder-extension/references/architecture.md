@@ -51,7 +51,7 @@ Return an empty menu when the current context has no valid action. Set each menu
 
 Keep user-facing source text in English and localize it in the extension's own String Catalog; the containing app's catalog does not automatically localize extension UI.
 
-Use extension-bundled monochrome template images for menu and toolbar glyphs when Finder must adapt them to Light, Dark, and highlighted states.
+Use template rendering for neutral glyphs only after verifying Finder adapts them correctly. Use intentional full-color artwork for app or brand icons. Follow [menu-icons.md](menu-icons.md); the source template flag, resource format, and local archive behavior do not prove correct colors across Finder transport.
 
 For badges, register a stable identifier-to-image mapping before assigning badge identifiers to URLs. Keep badge computation outside latency-sensitive Finder callbacks when it depends on expensive work.
 

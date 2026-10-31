@@ -12,9 +12,9 @@ Use this reference for Finder Sync custom-icon actions. Verify behavior on the t
 
 ## Lessons
 
-### Menu icons must be templates
+### Menu icons need an explicit rendering intent
 
-Bundle monochrome vector artwork in the extension asset catalog, set it to about 16×16 points, and set `isTemplate = true`. This lets Finder render correct Light, Dark, and selected colors. A fixed-color raster commonly appears black or mismatched.
+Use a tested template for neutral actions or preserve intentional app artwork in full color, following [menu-icons.md](menu-icons.md). Verify the real Finder's Light, Dark, normal, and highlighted states. The source template flag alone does not prove correct tinting across Finder's process boundary.
 
 ### A target path is not write permission
 

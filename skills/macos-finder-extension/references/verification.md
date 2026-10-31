@@ -43,6 +43,7 @@ For an untouched Release artifact, also run the project's normal signature verif
 Test only the surfaces the product implements, but test each end to end:
 
 - Context menu: correct selection, menu kind, enabled state, localization, icon appearance, action delivery, and result.
+- Menu glyphs: run the built-resource inspection and capture real Finder Light/Dark menus with the extension item both normal and highlighted, as specified in [menu-icons.md](menu-icons.md). Do not treat action success or `isTemplate` as a visual pass.
 - Badges: registration, initial display, updates, clearing, and behavior across Finder windows.
 - Toolbar: metadata, enabled state, selected/targeted URL behavior, and action delivery.
 - Monitored directories: every intended root plus exclusions; distinguish coverage from authorization.

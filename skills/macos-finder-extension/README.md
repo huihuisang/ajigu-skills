@@ -1,6 +1,6 @@
 # macOS Finder Extension
 
-Build and diagnose Finder Sync menus, badges, and toolbar actions while keeping application state, file authorization, and durable work in the containing app. Includes a local inspection script for bundle structure, signatures, entitlements, and optional extension registration.
+Build and diagnose Finder Sync menus, badges, and toolbar actions while keeping application state, file authorization, and durable work in the containing app. Includes local checks for bundle structure, signatures, entitlements, registration, and menu image rendering intent. The icon workflow verifies template or app artwork colors in the real Finder.
 
 ## Install
 
@@ -37,3 +37,13 @@ python3 scripts/test_inspection.py
 ```
 
 Tests use disposable bundle fixtures and command stubs for signature and registration cases. They do not install an extension or prove real Finder interaction. Follow [verification.md](references/verification.md) for the real app and extension test matrix.
+
+Inspect a bundled menu image with the macOS Swift toolchain:
+
+```bash
+swift scripts/inspect_menu_icon.swift /path/to/FinderExtension.appex ActionTemplate
+swift scripts/inspect_menu_icon.swift /path/to/FinderExtension.appex AppMenuIcon --full-color
+python3 scripts/test_menu_icons.py
+```
+
+This check needs AppKit and a local Swift compiler. It validates the image's declared intent and archive behavior, while [menu-icons.md](references/menu-icons.md) covers the required real Finder Light/Dark and highlighted-state observations. A successful resource check does not establish correct menu colors.

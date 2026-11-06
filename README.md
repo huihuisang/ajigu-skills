@@ -2,6 +2,8 @@
 
 A collection of reusable agent skills for app artwork, App Store operations, macOS development and distribution, project decisions, task outputs, disk cleanup, UI research, and equity analysis.
 
+Use the [project agent guide template](templates/README.md) to set up a repository with task-specific instructions.
+
 ## Skills
 
 | Skill | Purpose | Optional dependencies |

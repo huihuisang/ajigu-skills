@@ -1,7 +1,7 @@
-# Web App Workflow
+# Web 应用流程
 
-- Use the package manager and scripts declared by the project. Choose the affected test or check first. Build when routing, shared code, or the published output changes.
-- Verify visible changes in a local browser preview at relevant desktop and mobile widths. Check interaction, keyboard access, and loading or error states where the change affects them.
-- Preserve existing URL and locale contracts. When changing URLs, verify affected redirects, canonical URLs, navigation, and indexable output.
-- Follow the project's public output boundary. Keep private source material, measurement evidence, drafts, and credentials outside the public artifact. Preserve asset licenses and provenance.
-- Review the rendered output and the exact artifact before an authorized deployment. Treat deployment, indexing requests, and live measurement as separate operations.
+- 使用项目声明的包管理器和脚本。先运行受影响的检查。路由、共享代码或发布产物有变动时执行构建验证。
+- 在本地浏览器预览中验证可见变化，覆盖相关的桌面和移动宽度。按影响范围检查交互、键盘操作以及加载和错误状态。
+- 保留现有 URL 与语言路由约定。URL 变更时核对相关重定向、canonical URL、站内导航和可索引输出。
+- 遵守项目的公开输出边界。私有源素材、测量证据、草稿和凭据不得进入公开产物。保留素材许可证和来源。
+- 获授权部署前，检查实际渲染结果和即将发布的产物。部署、索引通知和线上测量分别按授权执行。

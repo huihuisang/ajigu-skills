@@ -1,19 +1,18 @@
-# Project Agent Guide Template
+# 项目代理指令模板
 
-Copy [AGENTS.template.md](AGENTS.template.md) to the root `AGENTS.md` of a new repository, or merge its rules into an existing guide. The base works as written. Add a short project scope and the actual check commands when the repository has them.
+把[根模板](AGENTS.template.md)复制为新项目的根目录 `AGENTS.md`，或将适用规则合并到现有入口。模板可以直接使用。项目有明确的范围、目标和验证命令时，再写入对应章节。
 
-Copy each applicable guide below to `.agents/guides/` in the destination repository. Add the matching line under **Read for This Task**. If the repository already has an authoritative guide for that work, merge the applicable rules there and link to it.
+将适用的指南复制到目标仓库的 `.agents/guides/`，把对应入口加入根文件的「按任务阅读」。如果仓库已有权威指南，将适用规则并入原文并链接到那里。
 
-| Copy this guide | Add this route |
-| --- | --- |
-| [apple-app.md](guides/apple-app.md) | Apple builds, simulator or device checks, localization, or signing → `[Apple app workflow](.agents/guides/apple-app.md)` |
-| [web-app.md](guides/web-app.md) | Website UI, browser checks, SEO, or public output → `[Web app workflow](.agents/guides/web-app.md)` |
-| [release-and-data.md](guides/release-and-data.md) | Release, deployment, credentials, persistent data, or migrations → `[Release and data workflow](.agents/guides/release-and-data.md)` |
+| 复制指南 | 何时读取 | 根入口使用的链接 |
+| --- | --- | --- |
+| [Apple 应用](guides/apple-app.md) | Apple 构建、模拟器或真机验证、本地化、签名 | `[Apple 应用流程](.agents/guides/apple-app.md)` |
+| [Web 应用](guides/web-app.md) | 网站界面、浏览器验证、SEO、公开构建产物 | `[Web 应用流程](.agents/guides/web-app.md)` |
+| [发布与数据](guides/release-and-data.md) | 发布、部署、凭据、持久化和迁移 | `[发布与数据流程](.agents/guides/release-and-data.md)` |
 
-- Keep boundaries that affect routine decisions in the root guide. Include the affected-target check and any required safety or approval gate.
-- Use a task, path, or operation as the trigger for each reference. Read only the references that match the work. A link to an ordinary Markdown file requires an explicit read.
-- Reuse the README, existing design decisions, workflow scripts, and skills as sources of truth. A scoped `AGENTS.md` supplements the root guide for local rules. Keep a root route for high-risk work that may start from the repository root.
-- If a repository already uses Claude Code, it can share the root guide through `@AGENTS.md` in `CLAUDE.md`. Keep host-specific instructions there only if they are required.
-- Verify project-specific paths, schemes, supported locales, and commands before listing them. Keep machine paths, credentials, private evidence, and personal notification settings outside the template. Start a new session to check instruction discovery.
+- 根入口保留影响日常操作的约束、受影响目标的验证入口，以及不可跳过的权限门槛。
+- 给每条阅读入口写清任务、路径或操作条件。普通 Markdown 链接由代理在任务匹配时打开。子目录的 `AGENTS.md` 只补充局部规则。
+- 优先复用 README、设计决策、脚本和已有技能。使用 Claude Code 的项目可在 `CLAUDE.md` 通过 `@AGENTS.md` 共用根入口。
+- 逐项核实项目路径、scheme、支持语言和命令。机器专用路径、凭据、私有证据和个人通知设置留在本机。用新会话确认指令加载。
 
-See [AGENTS.md discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md) and [skill loading](https://learn.chatgpt.com/docs/build-skills).
+[AGENTS.md 加载说明](https://learn.chatgpt.com/docs/agent-configuration/agents-md) · [技能加载说明](https://learn.chatgpt.com/docs/build-skills)

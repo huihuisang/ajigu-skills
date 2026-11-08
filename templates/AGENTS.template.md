@@ -1,17 +1,17 @@
-# Project Agent Guide
+# 项目代理工作规范
 
-## Required Constraints
+## 必须遵守的约束
 
-- Read the relevant implementation and tests first. Reuse the project's existing patterns and keep the change scoped to the request.
-- Preserve existing work and staging. Commit only verified changes for the current task. Push only when the user explicitly requests it for the current change.
-- Keep credentials, private environment values, and personal data out of logs, commits, and generated output. Obtain explicit authorization before a live deployment, production write, or release.
-- Keep disposable build outputs, logs, and captures outside the repository. Keep source assets and durable test fixtures with the project when required.
+- 先读相关实现与测试。复用项目已有做法，把改动控制在本次任务范围内。
+- 保留已有改动和暂存状态。验证后只提交本次改动。只在用户明确授权推送本次改动时才推送。
+- 凭据、私有环境变量和个人数据不得进入日志、提交或生成产物。部署、生产环境写入和发布需要对应授权。
+- 临时构建产物、日志和录屏默认放在仓库外。正式源素材和长期回归测试夹具按项目约定入库。
 
-## Verification
+## 验证入口
 
-- Use the repository's documented commands and checks for the affected target. For prose-only changes, check the diff and edited links. For behavior changes, verify the normal path and relevant failure cases.
-- Report the checks that actually ran and distinguish local results from simulator, device, browser, or live service evidence.
+- 使用项目已有命令验证受影响的目标。纯文档改动检查差异和修改过的链接。行为改动验证正常路径和相关失败场景。
+- 报告实际执行的检查，区分本地、模拟器、真机、浏览器和线上环境的验证结果。
 
-## Read for This Task
+## 按任务阅读
 
-- Read the nearest project guide or the existing documentation for the affected subsystem before changing its contracts. Read build or release guides when the task needs that workflow.
+- 改动模块契约前，先读该目录的项目指令或现有专题文档。涉及构建或发布时，读取对应流程。

@@ -1,6 +1,6 @@
-# Release and Data Workflow
+# 发布与数据流程
 
-- Test against isolated fixtures or a local environment. Keep real user files, production data, live credentials, and test state separate.
-- Preserve existing data and compatibility. Before a schema or storage change, identify how older data loads, how partial failure is handled, and how recovery is verified.
-- Before an authorized release or deployment, confirm the exact target, source revision, artifact, and environment. If synchronization changes the candidate, repeat the relevant checks.
-- Publish through the project's documented entry point. Check the resulting revision or artifact at the destination and report build, upload, distribution, and deployment as separate states.
+- 使用隔离夹具或本地环境测试。将真实用户文件、生产数据、线上凭据与测试状态分开。
+- 保留已有数据和兼容性。变更 schema 或存储前，确认旧数据如何加载、部分失败如何处理，以及恢复如何验证。
+- 获授权发布或部署前，核对目标、源码提交、产物和环境。同步改变候选内容时，重新执行相关验证。
+- 通过项目规定的入口发布。在目标端回读提交或产物，分别报告构建、上传、分发和部署状态。

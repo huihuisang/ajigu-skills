@@ -1,7 +1,7 @@
-# Apple App Workflow
+# Apple 应用流程
 
-- Build and test the affected scheme. If shared code or configuration changes, check each affected platform and extension. Prefer the project's build-only entry point. Start or replace a user-facing app instance only when the user requests foreground verification.
-- Use the project's simulator or device workflow for UI checks. Verify affected layouts, appearance, and accessibility. Report hardware, entitlement, and synchronization behavior only for the environment that was actually checked.
-- Use the affected target's String Catalog for user-facing and accessibility text. Follow the project's source language and update its supported locales in the same change. Include extensions, widgets, intents, and notifications when affected.
-- Preserve bundle identifiers, signing teams, entitlements, capabilities, and extension embedding. Obtain explicit approval before changing these boundaries. Follow the project's signing requirements for simulator builds that depend on entitlements.
-- Use the project's approved App Store Connect workflow. Build upload, tester distribution, and review submission each require authorization for that operation.
+- 构建和测试受影响的 scheme。共享代码或配置变更时，检查每个受影响的平台和扩展。优先用项目的仅构建入口。只有用户要求前台验证时才启动或替换正在运行的应用实例。
+- 用项目约定的模拟器或真机流程验证界面。检查受影响的布局、外观与辅助功能。硬件、entitlement 和同步行为按实际验证环境报告。
+- 界面和辅助功能文案通过目标的 String Catalog 管理，使用项目约定的源语言，并在同一次变更中更新所有支持语言。扩展、小组件、App Intents 和通知按影响范围检查。
+- 保留 bundle 标识符、签名团队、entitlements、capabilities 和扩展嵌入方式。改动前取得明确授权。依赖模拟器 entitlement 的目标遵守项目签名要求。
+- 使用项目批准的 App Store Connect 流程。上传构建、分发测试包和提交审核分别按授权执行。

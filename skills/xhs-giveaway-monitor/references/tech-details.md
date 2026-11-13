@@ -66,7 +66,7 @@ const confirmBtn = Array.from(document.querySelectorAll("button")).find(b =>
 if (confirmBtn) { confirmBtn.click(); await sleep(1200); }
 ```
 
-发送后验证：最后一条 `.chat-item__content--right` 的 textContent 包含所发内容。
+固定目标 UID 和标签页。发码、补码和感谢语分别核对：输入前及按回车或点击确认前，校验会话 URL 的 UID、选中会话及消息区。发送前记录最后一条本人消息，发送后再次核对 UID，并验证同一会话新增的本人消息全文匹配。校验失败立即停发，记录待办并先查发码结果。
 
 ## 3. 笔记页（评论）DOM 结构
 

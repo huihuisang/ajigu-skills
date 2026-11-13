@@ -1,6 +1,6 @@
 # Ajigu Skills
 
-A collection of reusable agent skills for app artwork, App Store operations, macOS development and distribution, project decisions, task outputs, disk cleanup, UI research, and equity analysis.
+A collection of reusable agent skills for app artwork, App Store operations, macOS development and distribution, project decisions, task outputs, disk cleanup, UI research, equity analysis, and Xiaohongshu giveaway-code monitoring.
 
 Use the [project agent guide template](templates/README.md) to set up a repository with task-specific instructions.
 
@@ -19,10 +19,11 @@ Use the [project agent guide template](templates/README.md) to set up a reposito
 | [`macos-direct-distribution`](skills/macos-direct-distribution/README.md) | Prepare Developer ID signing, notarization, stapling, and DMG release evidence. | macOS, Xcode tools; authorized Apple signing and notarization access |
 | [`macos-finder-extension`](skills/macos-finder-extension/README.md) | Build and diagnose Finder Sync extensions, signing, permissions, and registration. | macOS system tools; Xcode for builds |
 | [`disk-cleanup`](skills/disk-cleanup/README.md) | Inspect development storage and clean only authorized, verified candidates. | macOS terminal; relevant development tools when installed |
+| [`xhs-giveaway-monitor`](skills/xhs-giveaway-monitor/README.md) | Monitor a Xiaohongshu giveaway note: auto-reply 私我～ to new commenters who have not DM'd, send App Store redeem codes from a CSV to unreplied DMs, and replace codes reported as used. | ZCode in-app browser logged in to xiaohongshu.com; redeem-code CSV |
 
 ## Install
 
-Choose the complete plugin for one versioned bundle, or install individual skills with the Skills CLI. Both options use the same `skills/` sources. Plugins contain all 11 skills and have no hooks or MCP servers.
+Choose the complete plugin for one versioned bundle, or install individual skills with the Skills CLI. Both options use the same `skills/` sources. Plugins contain all 12 skills and have no hooks or MCP servers.
 
 ### Codex plugin
 
